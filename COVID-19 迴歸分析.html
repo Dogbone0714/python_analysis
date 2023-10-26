@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0098)https://www.pythonanywhere.com/user/dogbone0714/files/home/dogbone0714/mysite/templates/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>COVID-19 迴歸分析</title>
+    <style>
+        h1 {
+            color: #333;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>COVID-19 迴歸分析</h1>
+    
+    <div class="result">
+        {% if coef and intercept %}
+            <p>迴歸方程式： y = {{ coef }}x + {{ intercept }}</p>
+            <p>
+                這個方程式表示每增加一個單位的確診人數(x)，預計會有 {{ coef }} 個單位的死亡人數(y)。
+                起始值為 {{ intercept }}，表示在確診人數為 0 時的預測死亡人數。
+            </p>
+        {% else %}
+            <p>無法獲取資料或執行迴歸分析。</p>
+        {% endif %}
+    </div>
+
+</body><div id="vimeo-record-extension"></div></html>
